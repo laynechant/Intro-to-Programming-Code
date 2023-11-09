@@ -72,19 +72,19 @@ void fightboss() {
 
 
         if (playerDamage > 0) {
-            cout << "You attack the" << entity << " with your weapon and deal " << playerDamage << " damage!" << endl;
+            cout << "You attack the " << entity << " with your weapon and deal " << playerDamage << " damage!" << endl;
             bossHealth -= playerDamage;
         }
 
         if (bossHealth <= 0) {
-            cout << "Congratulations! You defeated the" << entity << " and saved the day. What a hero!" << endl;
+            cout << "Congratulations! You defeated the " << entity << " and saved the day. What a hero!" << endl;
             cout << "The end." << endl;
             return;
         }
 
 
         int bossDamage = 15;
-        cout << "The" << entity <<  "attacks you and deals " << bossDamage << " damage!" << endl;
+        cout << "The " << entity <<  "attacks you and deals " << bossDamage << " damage!" << endl;
         playerHealth -= bossDamage;
 
         if (playerHealth <= 0) {
