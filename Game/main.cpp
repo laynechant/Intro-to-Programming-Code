@@ -7,6 +7,6 @@ using namespace std;
 
 int main() {
     printIntro();
-    fightboss();
+    fightBoss();
     return 0;
 }
