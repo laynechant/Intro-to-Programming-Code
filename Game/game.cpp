@@ -52,9 +52,10 @@ int chooseWeapon(int random) {
 
 void fightSecondBoss(int playerHealth) {
     int secondBossHealth = 300;
+    string entity2;
 
     cout << "A new, more formidable challenger appears!" << endl;
-
+    cin >> entity2;
     while (playerHealth > 0 && secondBossHealth > 0) {
         int playerDamage = chooseWeapon(1);
 
@@ -101,8 +102,8 @@ void fightBoss() {
 
         if (bossHealth <= 0) {
             cout << "Congratulations! You defeated the " << entity << "." << endl;
-            playerHealth += 150;// Add 100 hp after defeating the frist boss
-            if (playerHealth > 250) playerHealth = 250; // Health does not exceed 200
+            playerHealth += 100;// Add 100 hp after defeating the first boss
+            if (playerHealth > 200) playerHealth = 200; // Health does not exceed 200
             fightSecondBoss(playerHealth); // Start the second boss fight
             return;
         }

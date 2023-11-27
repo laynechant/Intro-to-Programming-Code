@@ -3,7 +3,4 @@ project(untitled1)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(untitled1 main.cpp
-        game.cpp
-        game.h
-        )
+add_executable(untitled1 game.cpp main.cpp)
