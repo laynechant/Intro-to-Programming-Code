@@ -9,5 +9,6 @@ void fightBoss();
 int chooseWeapon(int random);
 int random1();
 void fightSecondBoss(int playerHealth);
+void fightthirdBoss(int playerHealth);
 
 #endif //UNTITLED1_GAME_H
