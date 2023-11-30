@@ -1,6 +1,8 @@
 #include "game.h"
 #include <string>
 #include <random>
+#include <thread>
+#include <chrono>
 #include <iostream>
 using namespace std;
 
@@ -73,14 +75,14 @@ int chooseWeapon(int random) {
     return damage;
 }
 
-void fightSecondBoss(int playerHealth,string &entity2) {
+void fightSecondBoss(int playerHealth,string &entity2, string &entity3) {
     int secondBossHealth = 300;
    // string entity2;
 
     cout << "A new, more formidable challenger appears!" << endl;
     cout << "Enter the name for this second boss:";
     cin >> entity2;
-    cout << "From the shadows" << &entity2 << " appears! From the darkness!!" << endl;
+    cout << "From the shadows" << entity2 << " appears! From the darkness!!" << endl;
     while (playerHealth > 0 && secondBossHealth > 0) {
         int playerDamage = chooseWeapon(1);
 
@@ -92,7 +94,7 @@ void fightSecondBoss(int playerHealth,string &entity2) {
             cout << "Incredible! You defeated the second boss and emerged victorious."<< endl;
             playerHealth += 100;// Add 100 hp after defeating the frist boss
             if (playerHealth > 200) playerHealth = 200; // Health does not exceed 200
-            fightthirdBoss(playerHealth); // Start the second boss fight
+            fightthirdBoss(playerHealth,entity3); // Start the second boss fight
             return;
         }
 
@@ -112,7 +114,7 @@ void fightSecondBoss(int playerHealth,string &entity2) {
     }
 }
 
-void fightBoss(string &entity, string &entity2) {
+void fightBoss(string &entity, string &entity2, string &entity3) {
     int playerHealth = 100;
     int bossHealth = 200;
 
@@ -130,7 +132,7 @@ void fightBoss(string &entity, string &entity2) {
             cout << "Congratulations! You defeated the " << entity << "." << endl;
             playerHealth += 100;// Add 100 hp after defeating the first boss
             if (playerHealth > 200) playerHealth = 200; // Health does not exceed 200
-            fightSecondBoss(playerHealth, entity2); // Start the second boss fight
+            fightSecondBoss(playerHealth, entity2, entity3); // Start the second boss fight
             return;
         }
 
@@ -149,32 +151,34 @@ void fightBoss(string &entity, string &entity2) {
     }
 }
 
-void fightthirdBoss(int playerHealth) {
+void fightthirdBoss(int playerHealth,string &entity3) {
     int thirdBossHealth = 400;
 
     cout << "A new, more formidable challenger appears!" << endl;
+    cout << "His name is: " << endl;
+    cin >> entity3;
 
     while (playerHealth > 0 && thirdBossHealth > 0) {
         int playerDamage = chooseWeapon(1);
 
         if (playerDamage > 0) {
-            cout << "You attack the new boss with your weapon and deal " << playerDamage << " damage!" << endl;
+            cout << "You attack " << entity3 << " with your weapon and deal " << playerDamage << " damage!" << endl;
             thirdBossHealth -= playerDamage;
         }
 
         if (thirdBossHealth <= 0) {
-            cout << "Incredible! You defeated the third boss and emerged victorious. True legend!" << endl;
+            cout << "Incredible! You defeated " << entity3 << " and emerged victorious. True legend!" << endl;
             cout << "The end." << endl;
             return;
         }
 
-       // int thirdBossDamage = 30;
+
         int bossDamage1 = random1(bossDamage[0], bossDamage[1]);
-        cout << "The new boss attacks you and deals " << bossDamage1 << " damage!" << endl;
+        cout << entity3 <<" attacks you and deals " << bossDamage1 << " damage!" << endl;
         playerHealth -= bossDamage1;
 
         if (playerHealth <= 0) {
-            cout << "You have been overwhelmed by the third boss. Game over!" << endl;
+            cout << "You have been overwhelmed by " << entity3 << ". Game over!" << endl;
             cout << "The end." << endl;
             return;
         }
