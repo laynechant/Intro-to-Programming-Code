@@ -3,6 +3,10 @@
 //
 #pragma once
 #include <string>
+#include <iostream>
+#include <string>
+#include <thread>
+#include <chrono>
 using namespace std;
 const int weaponDamageLongSword[2] = {50,175};
 const int weaponDamageRapier[2] = {75,200};
@@ -16,4 +20,4 @@ int chooseWeapon(int random);
 int random1();
 void fightSecondBoss(int playerHealth, string &entity2, string &entity3);
 void fightthirdBoss(int playerHealth, string &entity3);
-
+void printWithTime(const string& str, chrono::milliseconds timeToWaitMs);
