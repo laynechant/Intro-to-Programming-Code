@@ -27,10 +27,10 @@ void printIntro(string &entity) {
                       "##               ###                 ###        ###                          #####               \n"
                       "##             ###                    ##        ## ##                        #####                \n"
                       "###############                        #########    ###                      #####                  \n"
-                      "\n", 1000ms);
+                      "\n", 1ms);
 
-    printWithTime("On a night veiled by a churning tempest, an air of unease crept through the darkness.\n", 50ms);
-    printWithTime("The wind whispered of a lurking presence, a mysterious entity whose legend was as old as the land itself...\n", 50ms);
+    printWithTime("On a night veiled by a churning tempest, an air of unease crept through the darkness.\n", 10ms);
+    printWithTime("The wind whispered of a lurking presence, a mysterious entity whose legend was as old as the land itself...\n", 10ms);
     cout << "                ^    ^            " << endl;
     cout << "               / \\  //\\          " << endl;
     cout << " |\\___/|      /   \\//  .\\        " << endl;
@@ -48,11 +48,11 @@ void printIntro(string &entity) {
     cout << "  ///.----..>    c   \\             _ -~             `.  ^-`   ^-_" << endl;
     cout << "    ///-._ _ _ _ _ _ _}^ - - - - ~                     ~--,   .-~" << endl;
     cout << "                                                          /.-'" << endl;
-    printWithTime("Enter the name of this enigmatic entity: ", 50ms);
+    printWithTime("Enter the name of this enigmatic entity: ", 10ms);
     cin >> entity;
 
-    printWithTime("As the tempest raged, " + entity + " emerged from the shadows, eyes aglow with eldritch fire.\n", 50ms);
-    printWithTime("Your heart pounds as you brace for the encounter to come...\n", 50ms);
+    printWithTime("As the tempest raged, " + entity + " emerged from the shadows, eyes aglow with eldritch fire.\n", 10ms);
+    printWithTime("Your heart pounds as you brace for the encounter to come...\n", 10ms);
 
 
 
@@ -69,7 +69,7 @@ int random1(int start, int end) {
 int chooseWeapon(int random) {
     cout << "Choose your action:" << endl;
     cout << "1. Attack with your weapon" << endl;
-    cout << "2. Heal yourself (restore 50 HP)" << endl;
+    cout << "2. Heal yourself (restore 10 HP)" << endl;
     cout << "Enter choice: ";
     int choice;
     cin >> choice;
@@ -78,9 +78,9 @@ int chooseWeapon(int random) {
 
     if (choice == 1) {
 
-        printWithTime("Choose your weapon:\n", 50ms);
+        printWithTime("Choose your weapon:\n", 10ms);
 
-        printWithTime("Choose your weapon: \n", 50ms);
+        printWithTime("Choose your weapon: \n", 10ms);
 
         cout << "1. Long sword" << endl;
         cout << "2. Rapier" << endl;
@@ -117,8 +117,8 @@ int chooseWeapon(int random) {
         damage = 0;
 
 
-        printWithTime("You have healed for 0 HP \n" , 50ms);
-        printWithTime("Don't be a wimp and fight the boss like a man \n"  , 50ms);
+        printWithTime("You have healed for 0 HP \n" , 10ms);
+        printWithTime("Don't be a wimp and fight the boss like a man \n"  , 10ms);
 
     }
     return damage;
@@ -131,7 +131,7 @@ void fightSecondBoss(int playerHealth,string &entity2, string &entity3) {
 
 
 
-    printWithTime("A new, more formidable challenger appears! \n", 50ms);
+    printWithTime("A new, more formidable challenger appears! \n", 10ms);
     cout << "         ,                                      ," << endl;
     cout << "        |\\                                      /|" << endl;
     cout << "     ,   \\'._ ,                           ,  _.'/   ," << endl;
@@ -160,10 +160,10 @@ void fightSecondBoss(int playerHealth,string &entity2, string &entity3) {
     cout << "                 `V (=|  .'    '.  |=) V`" << endl;
     cout << "                     V  / _/  \\_ \\  V" << endl;
     cout << "                       `\"` \\  / `\"`" << endl;
-    printWithTime("Enter the name for this second boss:  \n", 50ms);
+    printWithTime("Enter the name for this second boss:  \n", 10ms);
 
     cin >> entity2;
-    printWithTime("From the shadows " + entity2 + " appears! From the darkness!!\n", 50ms);
+    printWithTime("From the shadows " + entity2 + " appears! From the darkness!!\n", 10ms);
 
     while (playerHealth > 0 && secondBossHealth > 0) {
         int playerDamage = chooseWeapon(1);
@@ -176,7 +176,7 @@ void fightSecondBoss(int playerHealth,string &entity2, string &entity3) {
 
 
 
-            printWithTime( "Incredible! You defeated the second boss and emerged victorious. \n", 50ms);
+            printWithTime( "Incredible! You defeated the second boss and emerged victorious. \n", 10ms);
 
             playerHealth += 100;// Add 100 hp after defeating the frist boss
             if (playerHealth > 200) playerHealth = 200; // Health does not exceed 200
@@ -193,8 +193,8 @@ void fightSecondBoss(int playerHealth,string &entity2, string &entity3) {
         if (playerHealth <= 0) {
 
 
-            printWithTime("You have been overwhelmed by the second boss. Game over! \n" , 50ms);
-            printWithTime("The end." , 50ms);
+            printWithTime("You have been overwhelmed by the second boss. Game over! \n" , 10ms);
+            printWithTime("The end." , 10ms);
 
             return;
         }
@@ -207,7 +207,7 @@ void fightBoss(string &entity, string &entity2, string &entity3) {
     int playerHealth = 100;
     int bossHealth = 200;
 
-    printWithTime("The battle begins!\n", 50ms);
+    printWithTime("The battle begins!\n", 10ms);
 
     while (playerHealth > 0 && bossHealth > 0) {
         int playerDamage = chooseWeapon(1);
@@ -218,7 +218,7 @@ void fightBoss(string &entity, string &entity2, string &entity3) {
         }
 
         if (bossHealth <= 0) {
-            printWithTime("Congratulations! You defeated the " + entity + ".\n" , 50ms);
+            printWithTime("Congratulations! You defeated the " + entity + ".\n" , 10ms);
             playerHealth += 100;// Add 100 hp after defeating the first boss
             if (playerHealth > 200) playerHealth = 200; // Health does not exceed 200
             fightSecondBoss(playerHealth, entity2, entity3); // Start the second boss fight
@@ -227,15 +227,15 @@ void fightBoss(string &entity, string &entity2, string &entity3) {
 
         //int bossDamage = 15;
         int bossDamage1 = random1(bossDamage[0], bossDamage[1]);
-        printWithTime("The" + entity + "attacks you and deals\n" , 50ms);
+        printWithTime("The" + entity + "attacks you and deals\n" , 10ms);
         playerHealth -= bossDamage1;
 
         if (playerHealth <= 0) {
 
 
 
-            printWithTime("You have been defeated by the enemy. Better luck next time! \n", 50ms);
-            printWithTime("The end.", 50ms);
+            printWithTime("You have been defeated by the enemy. Better luck next time! \n", 10ms);
+            printWithTime("The end.", 10ms);
 
             return;
         }
@@ -249,8 +249,29 @@ void fightthirdBoss(int playerHealth,string &entity3) {
 
 
 
-    printWithTime("A new, more formidable challenger appears! \n", 50ms);
-    printWithTime("His name is: ", 50ms);
+    printWithTime("A new, more formidable challenger appears! \n", 10ms);
+    cout << "             *********" << endl;
+    cout << "           *************" << endl;
+    cout << "          *****     *****" << endl;
+    cout << "         ***           ***" << endl;
+    cout << "        ***             ***" << endl;
+    cout << "        **    0     0    **" << endl;
+    cout << "        **               **                  ____" << endl;
+    cout << "        ***             ***             //////////" << endl;
+    cout << "        ****           ****        ///////////////" << endl;
+    cout << "        *****         *****    ///////////////////" << endl;
+    cout << "        ******       ******/////////         |  |" << endl;
+    cout << "      *********     ****//////               |  |" << endl;
+    cout << "   *************   **/////*****              |  |" << endl;
+    cout << "  *************** **///***********          *|  |*" << endl;
+    cout << " ************************************    ****| <=>*" << endl;
+    cout << "*********************************************|<===>*" << endl;
+    cout << "*********************************************| <==>*" << endl;
+    cout << "***************************** ***************| <=>*" << endl;
+    cout << "******************************* *************|  |*" << endl;
+    cout << "********************************** **********|  |*" << endl;
+    cout << "*********************************** *********|  |*" << endl;
+    printWithTime("His name is: ", 10ms);
 
 
     cin >> entity3;
@@ -267,8 +288,8 @@ void fightthirdBoss(int playerHealth,string &entity3) {
 
 
 
-            printWithTime("Incredible! You defeated " + entity3 + " and emerged victorious. True legend! \n", 50ms);
-            printWithTime("The end.", 50ms);
+            printWithTime("Incredible! You defeated " + entity3 + " and emerged victorious. True legend! \n", 10ms);
+            printWithTime("The end.", 10ms);
 
             return;
         }
@@ -279,8 +300,8 @@ void fightthirdBoss(int playerHealth,string &entity3) {
         playerHealth -= bossDamage1;
 
         if (playerHealth <= 0) {
-            printWithTime("You have been overwhelmed by " + entity3 + ". Game over!\n", 50ms);
-            printWithTime("The end.\n", 50ms);
+            printWithTime("You have been overwhelmed by " + entity3 + ". Game over!\n", 10ms);
+            printWithTime("The end.\n", 10ms);
             return;
         }
 
