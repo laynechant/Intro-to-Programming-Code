@@ -17,6 +17,8 @@ void printWithTime(const string& str, chrono::milliseconds timeToWaitMs) {
 
 void printIntro(string &entity) {
 
+
+
     printWithTime(
                   "###############                        #########                     #####################    \n"
                       "##             ###                   ##         ##                           #####                        \n"
@@ -51,7 +53,8 @@ void printIntro(string &entity) {
     printWithTime("Enter the name of this enigmatic entity: ", 10ms);
     cin >> entity;
 
-    printWithTime("As the tempest raged, " + entity + " emerged from the shadows, eyes aglow with eldritch fire.\n", 10ms);
+    printWithTime("As the tempest raged, " + entity + " \n", 10ms);
+    printWithTime(" emerged from the shadows, eyes aglow with eldritch fire.\n", 10ms);
     printWithTime("Your heart pounds as you brace for the encounter to come...\n", 10ms);
 
 
@@ -135,8 +138,8 @@ void fightSecondBoss(int playerHealth,string &entity2, string &entity3) {
     cout << "         ,                                      ," << endl;
     cout << "        |\\                                      /|" << endl;
     cout << "     ,   \\'._ ,                           ,  _.'/   ," << endl;
-    cout << "     |\\  {'. '-`\\,     ,-._**_.-,       ,/`-' .'}  /|" << endl;
-    cout << "      \\`'-'-.  '.`\\    \\*____*/        /`.'  .-'-'`/" << endl;
+    cout << "     |\\  {'. '-`\\,      ,-._**_.-,      ,/`-' .'}  /|" << endl;
+    cout << "      \\`'-'-.  '.`\\      \\*____*/      /`.'  .-'-'`/" << endl;
     cout << "    ,'-'-._  '.  ) )     /`    `\\     ( (  .'  _.-'-'," << endl;
     cout << "    |\\'- _ '.   , /     /  /\"\"\\  \\     \\ ,  .'  _ -'/|" << endl;
     cout << "     \\'-   .  ; (      \\_|^  ^|_/      ) ;   .  .-'/" << endl;
@@ -159,7 +162,9 @@ void fightSecondBoss(int playerHealth,string &entity2, string &entity3) {
     cout << "                 /_/|_\\    /  \\    /_|_\\\\" << endl;
     cout << "                 `V (=|  .'    '.  |=) V`" << endl;
     cout << "                     V  / _/  \\_ \\  V" << endl;
-    cout << "                       `\"` \\  / `\"`" << endl;
+    cout << "                jgs    `\"` \\  / `\"`" << endl;
+    cout << "                            \\(" << endl;
+
     printWithTime("Enter the name for this second boss:  \n", 10ms);
 
     cin >> entity2;
