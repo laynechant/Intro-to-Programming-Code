@@ -16,11 +16,23 @@ void printWithTime(const string& str, chrono::milliseconds timeToWaitMs) {
 }
 
 void printIntro(string &entity) {
+    printWithTime(
+                  "###############                        #########                     #####################    \n"
+                      "##             ###                   ##         ##                           #####                        \n"
+                      "##               ###                ###         ###                          #####                   \n"
+                      "##                 ###               ##         ##     ###                   #####              \n"
+                      "##                  ###                #########     ##                      #####                 \n"
+                      "##                 ###                ##        ## ##                        #####                 \n"
+                      "##               ###                 ###        ###                          #####               \n"
+                      "##             ###                    ##        ## ##                        #####                \n"
+                      "###############                        #########    ###                      #####                  \n"
+                      "\n", 1000ms);
 
     printWithTime("On a night veiled by a churning tempest, an air of unease crept through the darkness.\n", 50ms);
     printWithTime("The wind whispered of a lurking presence, a mysterious entity whose legend was as old as the land itself...\n", 50ms);
     printWithTime("Enter the name of this enigmatic entity: ", 50ms);
     cin >> entity;
+
     printWithTime("As the tempest raged, " + entity + " emerged from the shadows, eyes aglow with eldritch fire.\n", 50ms);
     printWithTime("Your heart pounds as you brace for the encounter to come...\n", 50ms);
 }
