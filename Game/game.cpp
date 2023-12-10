@@ -83,7 +83,7 @@ int chooseWeapon(int random) {
 
         printWithTime("Choose your weapon:\n", 10ms);
 
-        printWithTime("Choose your weapon: \n", 10ms);
+
 
         cout << "1. Long sword" << endl;
         cout << "2. Rapier" << endl;
